@@ -8,6 +8,7 @@ const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var emailRouter = require('./routes/email');
 
 var app = express();
 
@@ -43,6 +44,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/', indexRouter);
+app.use('/', emailRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
